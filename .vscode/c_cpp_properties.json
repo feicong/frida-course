@@ -1,0 +1,109 @@
+// Copyright (c) 2024-2025 fei_cong(https://github.com/feicong/frida-course)
+// https://code.visualstudio.com/docs/cpp/configure-intellisense
+{
+    "env": {
+        "myIncludePath": [
+            "${workspaceFolder}/"
+        ],
+        "myDefines": [
+            "DEBUG",
+            "MY_FEATURE=1"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "linux_arm64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/lib/aarch64-linux-gnu/glib-2.0/include",
+                "/usr/include/gtk-3.0",
+                "/usr/include/pango-1.0",
+                "/usr/include/glib-2.0",
+                "/usr/include/aarch64-linux-gnu/",
+                "/usr/include/harfbuzz",
+                "/usr/include/fribidi",
+                "/usr/include/freetype2",
+                "/usr/include/libpng16",
+                "/usr/include/cairo",
+                "/usr/include/pixman-1",
+                "/usr/include/gdk-pixbuf-2.0",
+                "/usr/include/libmount",
+                "/usr/include/blkid",
+                "/usr/include/gio-unix-2.0",
+                "/usr/include/atk-1.0",
+                "/usr/include/at-spi2-atk/2.0",
+                "/usr/include/at-spi-2.0",
+                "/usr/include/dbus-1.0",
+                "/usr/lib/gcc/aarch64-linux-gnu/11/include",
+                "/usr/local/include",
+                "${myIncludePath}",
+                "/usr/include"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "configurationProvider": "mesonbuild.mesonbuild",
+            "compileCommands": "${workspaceFolder}/builddir/compile_commands.json",
+            "mergeConfigurations": true,
+            "defines": ["${myDefines}"],
+            "intelliSenseMode": "linux-clang-arm64",
+            "compilerArgs": [
+                "-Wall",
+                "-Wextra",
+                "-mtune=native",
+                "-no-pie",
+                "`pkg-config gtk+-3.0 --cflags`",
+                "`pkg-config --libs gtk+-3.0`",
+                "-lm"
+            ]
+        },
+        {
+            "name": "linux_x64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+                "/usr/include/gtk-3.0",
+                "/usr/include/pango-1.0",
+                "/usr/include/glib-2.0",
+                "/usr/include/x86_64-linux-gnu/",
+                "/usr/include/harfbuzz",
+                "/usr/include/fribidi",
+                "/usr/include/freetype2",
+                "/usr/include/libpng16",
+                "/usr/include/cairo",
+                "/usr/include/pixman-1",
+                "/usr/include/gdk-pixbuf-2.0",
+                "/usr/include/libmount",
+                "/usr/include/blkid",
+                "/usr/include/gio-unix-2.0",
+                "/usr/include/atk-1.0",
+                "/usr/include/at-spi2-atk/2.0",
+                "/usr/include/at-spi-2.0",
+                "/usr/include/dbus-1.0",
+                "/usr/lib/gcc/x86_64-linux-gnu/11/include",
+                "/usr/local/include",
+                "${myIncludePath}",
+                "/usr/include"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "configurationProvider": "mesonbuild.mesonbuild",
+            "compileCommands": "${workspaceFolder}/builddir/compile_commands.json",
+            "mergeConfigurations": true,
+            "defines": ["${myDefines}"],
+            "intelliSenseMode": "linux-clang-x64",
+            "compilerArgs": [
+                "-Wall",
+                "-Wextra",
+                "-mtune=native",
+                "-no-pie",
+                "`pkg-config gtk+-3.0 --cflags`",
+                "`pkg-config --libs gtk+-3.0`",
+                "-lm"
+            ]
+        }
+    ],
+    "version": 4,
+    "enableConfigurationSquiggles": true
+}

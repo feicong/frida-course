@@ -1,0 +1,15 @@
+.DS_Store
+hello
+build/
+builddir/
+*.so
+frida*.txt
+frida*.py
+/frida/
+android-ndk*
+~$*
+.cache
+/subprojects/usrsctp/
+/subprojects/frida-core/
+myenv
+glibc*.tar.gz

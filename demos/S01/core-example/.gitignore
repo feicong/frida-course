@@ -1,0 +1,5 @@
+libfrida-core.a
+frida-core.h
+.DS_Store
+frida-core-example
+frida-core-devkit/

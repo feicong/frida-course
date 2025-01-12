@@ -1,0 +1,238 @@
+// Copyright (c) 2024-2025 fei_cong(https://github.com/feicong/frida-course)
+// https://code.visualstudio.com/Docs/editor/debugging
+{
+    "compounds": [
+        {
+            "name": "dbus-debug",
+            "configurations": [
+                "dbus-server",
+                "dbus-client"
+            ],
+            "presentation": {
+                "hidden": false,
+                "group": "",
+                "order": 1
+            }
+        }
+    ],
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "dbus-server",
+            "program": "${workspaceFolder}/builddir/demos/S02/dbus/gdbus-demo-server",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "dbus-client",
+            "program": "${workspaceFolder}/builddir/demos/S02/dbus/gdbus-demo-client",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "glib_test",
+            "program": "${workspaceFolder}/builddir/demos/S01/glib_test/glib_test",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "socketpair2",
+            "program": "${workspaceFolder}/builddir/demos/S02/dbus/socketpair2",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "sctp-client",
+            "program": "${workspaceFolder}/builddir/demos/S02/sctp/sctp-client",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "hello",
+            "program": "${workspaceFolder}/builddir/demos/S01/app/hello",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "gui2",
+            "program": "${workspaceFolder}/builddir/demos/S01/gui/gui2",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "api_test",
+            "program": "${workspaceFolder}/builddir/demos/S01/api/api_test",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "calllib",
+            "program": "${workspaceFolder}/builddir/demos/S01/calllib/call_lib",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "bash file",
+            "type": "bashdb",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/frida",
+            "program": "${file}",
+            "args": []
+        },
+        {
+            "name": "package-server-fruity",
+            "type": "bashdb",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/frida",
+            "program": "${workspaceFolder}/frida/subprojects/frida-core/tools/package-server-fruity.sh",
+            "args": [],
+            "env": {
+                "FRIDA_VERSION": "16.5.6"
+            }
+        },
+        {
+            "name": "config-frida",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/config-frida.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/frida",
+            "args": [
+                "${workspaceFolder}/frida",
+                "--prefix=./dist",
+                "--enable-gadget",
+                "--enable-server",
+                "--enable-portal",
+                "--enable-inject",
+                "--disable-frida-tools",
+                "--disable-frida-python",
+                "--",
+                "-Dlibdir=lib",
+                "-Dfrida_qml=disabled",
+                "-Dfrida-gum:devkits=gum,gumjs",
+                "-Dfrida-core:devkits=core",
+                "-Db_ndebug=false",
+                "-Dstrip=false",
+                "-Doptimization=g"
+            ]
+        },
+        {
+            "name": "python file",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/frida",
+            "args": []
+        },
+        {
+            "name": "python file with args",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/frida",
+            "args": [
+                "${command:pickArgs}"
+            ]
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "frida-server",
+            "program": "${workspaceFolder}/frida/build/subprojects/frida-core/server/frida-server",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "frida-inject",
+            "program": "${workspaceFolder}/frida/build/subprojects/frida-core/inject/frida-inject",
+            "args": [
+                "-f",
+                "/bin/cat",
+                "-s",
+                "${workspaceFolder}/hello.js",
+                "--development"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "gum-graft",
+            "program": "${workspaceFolder}/frida/build/subprojects/frida-gum/tools/gum-graft",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "quickcompile",
+            "program": "${workspaceFolder}/frida/build/subprojects/frida-gum/bindings/gumjs/quickcompile",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "frida-inject",
+            "program": "${workspaceFolder}/frida/build/subprojects/frida-core/inject/frida-inject",
+            "args": [
+                "-f",
+                "/bin/cat",
+                "-s",
+                "${workspaceFolder}/hello.js",
+                "--development"
+            ],
+            "cwd": "${workspaceFolder}/frida",
+            "console": "integratedTerminal",
+        },
+        // https://github.com/vadimcn/codelldb/blob/master/MANUAL.md#connecting-to-lldb-server-agent
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "lldb frida-inject",
+            "program": "${workspaceFolder}/frida/build/subprojects/frida-core/inject/frida-inject",
+            "initCommands": [
+                "platform select remote-linux", // For example: 'remote-linux', 'remote-macosx', 'remote-android', etc.
+                "platform connect connect:\/\/*:8888",
+                "settings set target.inherit-env false" // See note below.
+            ],
+            "env": {}
+        },
+        {
+            "type": "lldb",
+            "request": "custom",
+            "name": "lldb-server frida-inject",
+            "targetCreateCommands": [
+                "target create ${workspaceFolder}/frida/build/subprojects/frida-core/inject/frida-inject"
+            ],
+            "processCreateCommands": [
+                "gdb-remote *:8888"
+            ]
+        }
+    ]
+}
