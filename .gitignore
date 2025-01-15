@@ -13,3 +13,4 @@ android-ndk*
 /subprojects/frida-core/
 myenv
 glibc*.tar.gz
+*.tar.xz
