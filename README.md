@@ -6,6 +6,8 @@
 Copyright (c) 2024-2025 fei_cong(https://github.com/feicong/frida-course)
 ```
 
+![image](https://github.com/user-attachments/assets/fd043172-d991-4bd5-9dd6-053f59a3e840)
+
 ## 学习环境
 
 vala版本: 0.56
